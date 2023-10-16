@@ -1,3 +1,4 @@
+// Dai(a1837470), Dil(a1825200), Swapnil(a1848855), Duong(a1876928)
 #ifndef HEAP_H
 #define HEAP_H
 
@@ -103,9 +104,9 @@ void Heap<T>::remove(T value) {
 
 template <typename T>
 T Heap<T>::getMin() {
-  if (values.empty()) {
-        throw std::out_of_range("The heap is empty. No minimum value.");
-    }
+  // if (values.empty()) {
+  //       throw std::out_of_range("The heap is empty. No minimum value.");
+  //   }
 
     // The minimum value is at the root of the heap (first element).
     return values[0];

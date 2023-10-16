@@ -1,3 +1,6 @@
+// Dai(a1837470), Dil(a1825200), Swapnil(a1848855), Duong(a1876928)
+#ifndef KLARGEST_H
+#define KLARGEST_H
 #include "Heap.tpp"
 #include <iostream>
 #include <vector>
@@ -22,3 +25,5 @@ int kth_largest(std::vector<int> values, int k) {
     // The kth largest element is now at the top of the max-heap
     return max_heap.top();
 }
+
+#endif
