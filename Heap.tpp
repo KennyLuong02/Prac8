@@ -56,24 +56,25 @@ Heap<T>::Heap(std::vector<T> start_values) {
 
 template <typename T>
 void Heap<T>::insert(T value) {
-    // Add the new value to the end of the vector.
+    // Add the new value to the end of the vector
     values.push_back(value);
 
-    // Find the index of the newly added element.
+    // Find the index of the newly added element
     int index = values.size() - 1;
 
     // Move the element up the tree to its correct position.
-    while (index > 0) {
-        int parent_index = (index - 1) / 2;
-        if (values[index] < values[parent_index]) {
-            // Swap the child with its parent if it's smaller.
-            std::swap(values[index], values[parent_index]);
-            index = parent_index;
-        } else {
-            // If the element is in the correct position, break the loop.
-            break;
-        }
-    }
+    // while (index > 0) {
+    //     int parent_index = (index - 1) / 2;
+    //     if (values[index] < values[parent_index]) {
+    //         // Swap the child with its parent if it's smaller.
+    //         std::swap(values[index], values[parent_index]);
+    //         index = parent_index;
+    //     } else {
+    //         // If the element is in the correct position, break the loop.
+    //         break;
+    //     }
+    // }
+    heapify(index);
 }
 
 /*******************************/
@@ -83,7 +84,7 @@ void Heap<T>::insert(T value) {
 template <typename T>
 void Heap<T>::remove(T value) {
     // Search for the element to remove.
-    for (int i = 0; i < values.size(); ++i) {
+    for (int i = 0; i < values.size(); i++) {
         if (values[i] == value) {
             // Replace the element to remove with the last element in the heap.
             values[i] = values.back();
@@ -133,7 +134,7 @@ void Heap<T>::heapify(int parent_index) {
     index_of_smallest = left_child_index;
   }
 
-  // check if left child exists and if exists, is smallest value there
+  // check if right child exists and if exists, is smallest value there
   if (right_child_index < values.size() &&
       values.at(right_child_index) < values.at(index_of_smallest)) {
     // make this index the current smallest
